@@ -1,3 +1,4 @@
+
 # EJS Tags Example Project
 
 This project demonstrates the use of Embedded JavaScript (EJS) to dynamically render HTML content based on variables and conditions. It uses EJS for templating and dynamically generates a page that displays the current second, a list of items, and custom HTML content.
@@ -10,8 +11,17 @@ This project demonstrates the use of Embedded JavaScript (EJS) to dynamically re
 - **Template Includes:** A footer is included using EJS's `include` function.
 
 ## Project Structure
- ├── views │ ├── index.ejs # Main EJS template file │ ├── footer.ejs # Footer template file ├── public │ └── styles.css # CSS file for styling (if any) ├── server.js # Node.js server file to serve the EJS templates └── README.md # Project documentation (this file)
- 
+
+```
+ ├── views 
+ │   ├── index.ejs        # Main EJS template file
+ │   ├── footer.ejs       # Footer template file
+ ├── public
+ │   └── styles.css       # CSS file for styling (if any)
+ ├── server.js            # Node.js server file to serve the EJS templates
+ └── README.md            # Project documentation (this file)
+```
+
 ### Template: `index.ejs`
 
 The `index.ejs` file is the main template that includes:
@@ -24,7 +34,6 @@ The `index.ejs` file is the main template that includes:
 ### Example Code in `index.ejs`
 
 ```html
-
 <h1><%= title %></h1>
 <p>Current second: <%= seconds %></p>
 
@@ -40,27 +49,42 @@ The `index.ejs` file is the main template that includes:
 
 <p><%- htmlContent %></p>
 <%- include("footer.ejs") %>
-ooter Template: footer.ejs
-This file contains the HTML for the footer section of the page. It is included in index.ejs using the EJS include function.
+```
 
-How to Run the Project
-Install Dependencies: Make sure you have Node.js installed, then run:
+### Footer Template: `footer.ejs`
+
+This file contains the HTML for the footer section of the page. It is included in `index.ejs` using the EJS `include` function.
+
+### How to Run the Project
+
+1. **Install Dependencies**: Make sure you have Node.js installed, then run:
+```bash
 npm install express ejs
-Run the Server: Use the following command to start the server:
+```
 
+2. **Run the Server**: Use the following command to start the server:
+```bash
 node server.js
-Access the Application: Open your browser and go to:
-http://localhost:3000
-Example Data
-When rendering the index.ejs, the following data could be passed from the server:
+```
 
+3. **Access the Application**: Open your browser and go to:
+```
+http://localhost:3000
+```
+
+### Example Data
+
+When rendering the `index.ejs`, the following data could be passed from the server:
+
+```js
 const data = {
   title: "EJS Example",
   seconds: new Date().getSeconds(),
   items: ["Apple", "Banana", "Cherry"],
   htmlContent: "<strong>Dynamic HTML content</strong>"
 };
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+```
 
-Now, everything is in a single block of code. You can copy this and place it in your `README.md` file as one block.
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
